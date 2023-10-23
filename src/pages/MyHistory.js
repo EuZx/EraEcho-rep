@@ -1,65 +1,76 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Form } from "react-bootstrap";
-import "./MyHistory.css";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './MyHistory.css';
 
-const MyHistory = () => {
-  return (
-    <div className="myhistory">
-      <div className="frame">
-        <textarea className="textarea">
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-          <p className="p">.</p>
-        </textarea>
-      </div>
-      <div className="frame1">
-        <div className="frame2">
-          <div className="frame3">
-            <h1 className="eraecho">EraEcho</h1>
-            <div className="frame4">
-              <div className="home-parent">
-                <a className="home">Home</a>
-                <div className="login">Login</div>
-              </div>
+function MyHistory() {
+    const [startTime, setStartTime] = useState('');
+    const [endTime, setEndTime] = useState('');
+    const [reviews, setReviews] = useState([]); // This would be your fetched data
+
+    const handleSearch = () => {
+        // Send start and end time to the backend and update reviews state based on the response
+    }
+
+    const handleSort = (type) => {
+        // Sort the reviews based on type and update the state
+    }
+
+    return (
+        <div className="container">
+          <div className="header">
+            <h1>EraEcho</h1> 
+            <div className="links">
+              <Link to="/mainpage">Home</Link>
+              <Link to="/loginpage">Login</Link>
             </div>
           </div>
-          <div className="frame5">
-            <section className="frame-parent">
-              <div className="frame-child" />
-              <div className="frame6">
-                <div className="frame7">
-                  <img className="group-icon" alt="" src="/group.svg" />
-                  <Form className="username">
-                    <Form.Control type="text" placeholder="Username" />
-                  </Form>
+            <div className="profile-container">
+              <div className="profile-image">
+                <img className="vinyl-image" />
+                <img className="user-icon" />
+                <div className="profile-name">Username</div>
+              </div>
+            </div>
+            <div className="history-section">
+                <div className="history-title">My History</div>
+
+                <div className="time-selector">
+                    <input type="month" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
+                    <span>to</span>
+                    <input type="month" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
+                    <button onClick={handleSearch}>Search</button>
                 </div>
-              </div>
-            </section>
-            <div className="frame8">
-              <h1 className="my-history">My History</h1>
+                
+                {/* Graph */}
+                <div className="graph">
+                    <div className="x-axis"></div>
+                    <div className="y-axis"></div>
+                    {/* You can render your graph data here */}
+                </div>
+
+                <div className="graph-label">
+                    <span>Date/Time</span>
+                    <span>Number of Comments</span>
+                </div>
+
+                <div className="review-sort">
+                    <h2>History Reviews</h2>
+                    <select onChange={(e) => handleSort(e.target.value)}>
+                        <option value="genre">Genre</option>
+                        <option value="priceLowHigh">Price Low to High</option>
+                        <option value="priceHighLow">Price High to Low</option>
+                        <option value="brand">Brand</option>
+                    </select>
+                </div>
+
+                {reviews.map((review, index) => (
+                    <div key={index} className="review-item">
+                        {review.content} {/* Replace with actual review data */}
+                    </div>
+                ))}
             </div>
-          </div>
         </div>
-        <div className="frame9">
-          <section className="history-reviews">History Reviews</section>
-        </div>
-      </div>
-    </div>
-  );
-};
+    );
+}
 
 export default MyHistory;

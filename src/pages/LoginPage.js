@@ -9,10 +9,8 @@ const LoginPage = () => {
         <section className="nav" />
         <div className="navsection">
           <div className="navsec">
-            <a className="home1">Home</a>
-            <Link className="my-history1" to="/myhistory">
-              My History
-            </Link>
+            <Link className="home1" to="/main">Home</Link>
+            <Link className="my-history1" to="/myhistory">My History</Link>
           </div>
         </div>
       </div>
