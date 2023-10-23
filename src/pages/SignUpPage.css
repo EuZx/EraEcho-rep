@@ -1,0 +1,15 @@
+.signuppage {
+  position: relative;
+  border-radius: var(--br-3xs);
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-12xl);
+  background-image: url(/public/interestselection@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}

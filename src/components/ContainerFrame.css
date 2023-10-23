@@ -1,0 +1,76 @@
+.eraecho-wrapper,
+.eraecho3 {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.eraecho3 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  justify-content: center;
+  width: 622px;
+  height: 121px;
+}
+.eraecho-wrapper {
+  align-self: stretch;
+  height: 422px;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-131xl) 0;
+  box-sizing: border-box;
+  background-image: url(/public/frame-1@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  text-align: center;
+  font-size: var(--font-size-45xl);
+  color: var(--color-white);
+  font-family: var(--font-magneto);
+}
+.home3 {
+  text-decoration: none;
+  color: inherit;
+}
+.home3,
+.login2,
+.my-history3 {
+  position: relative;
+  display: inline-block;
+  width: 83px;
+  height: 31px;
+  flex-shrink: 0;
+}
+.my-history3 {
+  width: 162px;
+}
+.home-group {
+  width: 504px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 var(--padding-31xl);
+  box-sizing: border-box;
+}
+.frame16,
+.frame17 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.frame16 {
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-2xl);
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+  font-family: var(--font-lucida-bright);
+}

@@ -1,0 +1,216 @@
+.p {
+  margin: 0;
+}
+.textarea {
+  border: 0;
+  background-color: transparent;
+  font-family: var(--font-lucida-bright);
+  font-size: var(--font-size-5xl);
+  align-self: stretch;
+  position: relative;
+  color: var(--color-white);
+  text-align: center;
+}
+.eraecho,
+.frame {
+  display: flex;
+  justify-content: center;
+}
+.frame {
+  position: absolute;
+  top: 1075px;
+  left: 92px;
+  width: 840px;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.eraecho {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  align-items: center;
+  width: 622px;
+  height: 121px;
+  flex-shrink: 0;
+}
+.home {
+  text-decoration: none;
+  color: inherit;
+}
+.home,
+.login {
+  position: relative;
+  display: inline-block;
+  width: 83px;
+  height: 31px;
+  flex-shrink: 0;
+}
+.home-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 22px;
+}
+.frame4 {
+  width: 281px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-lucida-bright);
+}
+.frame-child,
+.frame3,
+.frame4 {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frame3 {
+  width: 1151px;
+  height: 121px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 248px;
+  position: undefined;
+  margin-right: 135px;
+}
+.frame-child {
+  position: relative;
+  width: 248px;
+  height: 248px;
+}
+.group-icon {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+.username {
+  border: 0;
+  background-color: transparent;
+  align-self: stretch;
+  position: relative;
+}
+.frame-parent,
+.frame6,
+.frame7 {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.frame7 {
+  align-self: stretch;
+  justify-content: flex-start;
+}
+.frame-parent,
+.frame6 {
+  width: 316px;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}
+.frame-parent {
+  width: 1026px;
+  height: 812px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 86px 60px;
+  box-sizing: border-box;
+  gap: 47px;
+  background-image: url(/public/frame-15@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.my-history {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+}
+.frame2,
+.frame5,
+.frame8 {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.frame8 {
+  width: 494px;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: -212px;
+}
+.frame2,
+.frame5 {
+  flex-shrink: 0;
+  align-items: center;
+}
+.frame5 {
+  width: 1026px;
+  height: 812px;
+  justify-content: flex-end;
+  position: undefined;
+  margin-right: 8px;
+  font-size: 54px;
+  font-family: var(--font-lucida-fax);
+}
+.frame2 {
+  width: 1286px;
+  height: 943px;
+  justify-content: center;
+  gap: 10px;
+}
+.history-reviews {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-lucida-bright);
+  color: var(--color-white);
+  text-align: center;
+}
+.frame1,
+.frame9 {
+  width: 850px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.frame1 {
+  position: absolute;
+  top: 0;
+  left: -131px;
+  width: 1286px;
+  height: 1074px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 27px;
+}
+.myhistory {
+  position: relative;
+  border-radius: var(--br-3xs);
+  width: 100%;
+  height: 1702px;
+  overflow: hidden;
+  background-image: url(/public/myhistory@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  text-align: center;
+  font-size: var(--font-size-45xl);
+  color: var(--color-white);
+  font-family: var(--font-magneto);
+}

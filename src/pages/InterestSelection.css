@@ -1,0 +1,68 @@
+.welcome {
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 92.5px);
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 185px;
+  height: 74px;
+}
+.eraecho1 {
+  margin: 0;
+  position: absolute;
+  top: 895px;
+  left: calc(50% - 156.5px);
+  font-size: var(--font-size-45xl);
+  font-weight: 700;
+  font-family: var(--font-magneto);
+  text-align: left;
+  display: inline-block;
+  width: 313px;
+  height: 73px;
+}
+.continue-button {
+  width: 207px;
+  position: absolute;
+  top: calc(50% + 90px);
+  left: calc(50% - 103.5px);
+}
+.selection-child {
+  margin: 0;
+  position: absolute;
+  top: 103px;
+  left: 72px;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 625px;
+  height: 396px;
+  overflow: hidden;
+}
+.interestselection,
+.selection {
+  position: relative;
+  overflow: hidden;
+}
+.selection {
+  width: 769px;
+  height: 968px;
+  flex-shrink: 0;
+}
+.interestselection {
+  border-radius: var(--br-3xs);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-12xl);
+  background-image: url(/public/interestselection@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  text-align: center;
+  font-size: var(--font-size-21xl);
+  color: var(--color-white);
+  font-family: var(--font-lucida-bright);
+}

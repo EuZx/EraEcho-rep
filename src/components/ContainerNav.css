@@ -1,0 +1,75 @@
+.eraecho4,
+.navsec1 {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.eraecho4 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  justify-content: center;
+  width: 622px;
+  height: 121px;
+}
+.navsec1 {
+  align-self: stretch;
+  height: 422px;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-131xl) 0;
+  box-sizing: border-box;
+  background-image: url(/public/frame-1@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  text-align: center;
+  font-size: var(--font-size-45xl);
+  color: var(--color-white);
+  font-family: var(--font-magneto);
+}
+.home4,
+.my-history4 {
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+  display: inline-block;
+  width: 83px;
+  height: 31px;
+  flex-shrink: 0;
+}
+.my-history4 {
+  width: 162px;
+}
+.navbars {
+  margin: 0;
+  width: 504px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 var(--padding-31xl);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+  font-family: var(--font-lucida-bright);
+}
+.nav1,
+.navsection1 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.nav1 {
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-2xl);
+}

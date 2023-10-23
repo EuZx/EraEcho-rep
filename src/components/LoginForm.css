@@ -1,0 +1,82 @@
+.log-in1 {
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 151px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 147px;
+  height: 74px;
+}
+.username3 {
+  border: 0;
+  background-color: transparent;
+  align-self: stretch;
+}
+.password1,
+.username2 {
+  position: absolute;
+  top: 111px;
+  left: 24px;
+  width: 401px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.password1 {
+  top: 223px;
+}
+.sign-up1 {
+  text-decoration: underline;
+}
+.do-not-have-container1 {
+  line-break: anywhere;
+  width: 100%;
+}
+.do-not-have-container {
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  top: 325px;
+  left: 0;
+  font-size: var(--font-size-mini);
+  color: inherit;
+  display: flex;
+  align-items: center;
+  width: 449px;
+  height: 33px;
+}
+.eraecho6 {
+  margin: 0;
+  position: absolute;
+  top: 895px;
+  left: calc(50% - 156.5px);
+  font-size: var(--font-size-45xl);
+  font-weight: 700;
+  font-family: var(--font-magneto);
+  text-align: left;
+  display: inline-block;
+  width: 313px;
+  height: 73px;
+}
+.confirm1 {
+  width: 207px;
+  position: absolute;
+  top: calc(50% - 89px);
+  left: calc(50% - 103.5px);
+}
+.loginsection {
+  position: relative;
+  width: 449px;
+  height: 968px;
+  overflow: hidden;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: var(--font-size-21xl);
+  color: var(--color-white);
+  font-family: var(--font-lucida-bright);
+}

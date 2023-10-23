@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Lucida Bright";
+  src: url("/public/Lucida Bright Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Magneto";
+  src: url("/public/Magneto Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Lucida Fax";
+  src: url("/public/Lucida Fax Regular.ttf");
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-lucida-bright: "Lucida Bright";
+  --font-lucida-fax: "Lucida Fax";
+  --font-magneto: Magneto;
+
+  /* font sizes */
+  --font-size-5xl: 24px;
+  --font-size-45xl: 64px;
+  --font-size-xl: 20px;
+  --font-size-11xl: 30px;
+  --font-size-13xl: 32px;
+  --font-size-21xl: 40px;
+  --font-size-mini: 15px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-gainsboro: #d9d9d9;
+  --color-darkgray: #b3b0b4;
+
+  /* Gaps */
+  --gap-2xl: 21px;
+  --gap-12xl: 31px;
+  --gap-7xs: 6px;
+
+  /* Paddings */
+  --padding-31xl: 50px;
+  --padding-131xl: 150px;
+  --padding-209xl: 228px;
+
+  /* Border radiuses */
+  --br-3xs: 10px;
+}

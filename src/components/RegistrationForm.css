@@ -1,0 +1,59 @@
+.sign-up {
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 108px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 185px;
+  height: 74px;
+}
+.confirm,
+.password,
+.username1 {
+  width: 401px;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 111px;
+  left: 0;
+}
+.confirm,
+.password {
+  top: 223px;
+}
+.confirm {
+  top: 335px;
+}
+.eraecho5 {
+  margin: 0;
+  position: absolute;
+  top: 895px;
+  left: calc(50% - 156.5px);
+  font-size: var(--font-size-45xl);
+  font-weight: 700;
+  font-family: var(--font-magneto);
+  text-align: left;
+  display: inline-block;
+  width: 313px;
+  height: 73px;
+}
+.register-button {
+  width: 207px;
+  position: absolute;
+  top: calc(50% - 37px);
+  left: calc(50% - 103.5px);
+}
+.registration {
+  position: relative;
+  width: 401px;
+  height: 968px;
+  overflow: hidden;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: var(--font-size-21xl);
+  color: var(--color-white);
+  font-family: var(--font-lucida-bright);
+}

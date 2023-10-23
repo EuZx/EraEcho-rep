@@ -1,0 +1,72 @@
+.home1,
+.my-history1,
+.nav {
+  position: relative;
+  flex-shrink: 0;
+}
+.nav {
+  align-self: stretch;
+  height: 325px;
+  overflow: hidden;
+  background-image: url(/public/frame5@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.home1,
+.my-history1 {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  width: 83px;
+  height: 31px;
+}
+.my-history1 {
+  cursor: pointer;
+  width: 162px;
+}
+.navsec {
+  width: 508px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 var(--padding-209xl);
+  box-sizing: border-box;
+}
+.hello,
+.loginpage,
+.navsection {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.navsection {
+  align-self: stretch;
+  align-items: flex-end;
+  justify-content: center;
+}
+.hello,
+.loginpage {
+  align-items: center;
+}
+.hello {
+  align-self: stretch;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.loginpage {
+  position: relative;
+  border-radius: var(--br-3xs);
+  width: 100%;
+  justify-content: center;
+  gap: var(--gap-12xl);
+  background-image: url(/public/interestselection@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+  font-family: var(--font-lucida-bright);
+}
