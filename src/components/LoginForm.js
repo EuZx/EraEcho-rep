@@ -1,13 +1,10 @@
 import { memo } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import "./LoginForm.css";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import "./LoginForm.css";
 
 const LoginForm = () => {
@@ -27,7 +24,7 @@ const LoginForm = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        history.push("/main");
+        Navigate("/main");
       } else {
         setError(data.message);
       }

@@ -1,54 +1,20 @@
-.welcome {
-  text-decoration: none;
-  position: absolute;
-  top: 0;
-  left: calc(50% - 92.5px);
-  color: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 185px;
-  height: 74px;
-}
-.eraecho1 {
-  margin: 0;
-  position: absolute;
-  top: 895px;
-  left: calc(50% - 156.5px);
-  font-size: var(--font-size-45xl);
-  font-weight: 700;
-  font-family: var(--font-magneto);
-  text-align: left;
-  display: inline-block;
-  width: 313px;
-  height: 73px;
-}
-.continue-button {
-  width: 207px;
-  position: absolute;
-  top: calc(50% + 90px);
-  left: calc(50% - 103.5px);
-}
-.selection-child {
-  margin: 0;
-  position: absolute;
-  top: 103px;
-  left: 72px;
-  background-color: rgba(255, 255, 255, 0.1);
-  width: 625px;
-  height: 396px;
-  overflow: hidden;
-}
 .interestselection,
 .selection {
   position: relative;
   overflow: hidden;
 }
+
 .selection {
   width: 769px;
   height: 968px;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Adjust this gap as needed */
 }
+
 .interestselection {
   border-radius: var(--br-3xs);
   width: 100%;
@@ -65,4 +31,70 @@
   font-size: var(--font-size-21xl);
   color: var(--color-white);
   font-family: var(--font-lucida-bright);
+}
+
+.selection-child {
+  margin: 0;
+  position: relative; /* Changed from absolute to relative for better content flow */
+  top: 103px;
+  left: 72px;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 625px;
+  height: 396px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Adjust as needed */
+}
+
+.label-box {
+  padding: 10px 20px; /* Adjust padding to give space around the label text */
+  border-radius: 50px; /* This will make the label box round */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for background change */
+  background-color: #cccccc; /* Default background color for label-box */
+}
+
+.label-box.selected {
+  background-color: #ffcc00; /* Change this to the desired color when a label is selected */
+}
+
+.welcome, 
+.eraecho1, 
+.continue-button {
+  z-index: 2; /* This ensures these elements appear above the labels */
+}
+
+.welcome {
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 92.5px);
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 185px;
+  height: 74px;
+}
+
+.eraecho1 {
+  margin: 0;
+  position: absolute;
+  top: 895px;
+  left: calc(50% - 156.5px);
+  font-size: var(--font-size-45xl);
+  font-weight: 700;
+  font-family: var(--font-magneto);
+  text-align: left;
+  display: inline-block;
+  width: 313px;
+  height: 73px;
+}
+
+.continue-button {
+  width: 207px;
+  position: absolute;
+  top: calc(50% + 90px);
+  left: calc(50% - 103.5px);
 }
