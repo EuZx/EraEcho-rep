@@ -1,88 +1,15 @@
-/* Background & Layout */
 .loginpage {
   position: relative;
   border-radius: var(--br-3xs);
   width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: var(--gap-12xl);
   background-image: url(/public/interestselection@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 100%;
-  text-align: left;
-  font-size: var(--font-size-5xl);
-  color: var(--color-white);
-  font-family: var(--font-lucida-bright);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hello {
-  position: absolute;
-  top: 115px;
-  left: 0;
-  width: 100%;
-  height: 600px; 
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  box-sizing: border-box;
-  padding: 5% 10%;
-  background-image: url(/public/frame5@2x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: top;
-  gap: var(--gap-7xs);
-}
-
-.nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  box-sizing: border-box;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.home1,
-.my-history1 {
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
-  position: relative;
-  z-index: 2; /* To ensure they appear above the background */
-}
-
-.home1 {
-  width: 83px;
-  height: 31px;
-}
-
-.my-history1 {
-  cursor: pointer;
-  width: 162px;
-}
-
-.navsec {
-  width: 508px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 0 0 var(--padding-209xl);
-  box-sizing: border-box;
-}
-
-.navsection {
-  align-self: stretch;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.loginpage,
-.hello {
-  align-items: center;
 }

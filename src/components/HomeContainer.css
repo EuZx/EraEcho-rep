@@ -6,7 +6,7 @@
 }
 .hello1 {
   align-self: stretch;
-  height: 325px;
+  height: 400px;
   overflow: hidden;
   background-image: url(/public/frame5@2x.png);
   background-size: cover;

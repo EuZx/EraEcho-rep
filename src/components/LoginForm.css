@@ -71,6 +71,7 @@
 }
 .loginsection {
   position: relative;
+  top: 200px;
   width: 449px;
   height: 968px;
   overflow: hidden;
