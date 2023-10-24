@@ -4,9 +4,11 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./Main.css";
 
-const Item = ({ imageUrl, description, onThumbsDownClick }) => (
+const Item = ({ imageUrl, description, onThumbsDownClick, title }) => (
   <div className="item">
-    <img src={imageUrl || "/subimage1.jpeg"} alt="item" />
+    <Link to={`/itemdetails/${title}`}>
+      <img src={imageUrl || "/subimage1.jpeg"} alt="item" />
+    </Link>
     <div className="description">{description}</div>
     <Button variant="danger" onClick={onThumbsDownClick}>Thumbs Down</Button>
   </div>
@@ -15,30 +17,30 @@ const Item = ({ imageUrl, description, onThumbsDownClick }) => (
 const Main = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [items, setItems] = useState([
-    { imageUrl: "/top-pick-1.jpg", description: "Top Pick 1 Description" },
-    { imageUrl: "/top-pick-2.jpg", description: "Top Pick 2 Description" },
-    { imageUrl: "/top-pick-3.jpg", description: "Top Pick 3 Description" },
-    { imageUrl: "/top-pick-4.jpg", description: "Top Pick 4 Description" },
-    { imageUrl: "/top-pick-5.jpg", description: "Top Pick 5 Description" },
-    { imageUrl: "/top-pick-6.jpg", description: "Top Pick 6 Description" },
-    { imageUrl: "/best-rating-1.jpg", description: "Best Rating 1 Description" },
-    { imageUrl: "/best-rating-2.jpg", description: "Best Rating 2 Description" },
-    { imageUrl: "/best-rating-3.jpg", description: "Best Rating 3 Description" },
-    { imageUrl: "/best-rating-4.jpg", description: "Best Rating 4 Description" },
-    { imageUrl: "/best-rating-5.jpg", description: "Best Rating 5 Description" },
-    { imageUrl: "/best-rating-6.jpg", description: "Best Rating 6 Description" },
-    { imageUrl: "/may-like-1.jpg", description: "May Like 1 Description" },
-    { imageUrl: "/may-like-2.jpg", description: "May Like 2 Description" },
-    { imageUrl: "/may-like-3.jpg", description: "May Like 3 Description" },
-    { imageUrl: "/may-like-4.jpg", description: "May Like 4 Description" },
-    { imageUrl: "/may-like-5.jpg", description: "May Like 5 Description" },
-    { imageUrl: "/may-like-6.jpg", description: "May Like 6 Description" },
-    { imageUrl: "/similar-1.jpg", description: "Similar 1 Description" },
-    { imageUrl: "/similar-2.jpg", description: "Similar 2 Description" },
-    { imageUrl: "/similar-3.jpg", description: "Similar 3 Description" },
-    { imageUrl: "/similar-4.jpg", description: "Similar 4 Description" },
-    { imageUrl: "/similar-5.jpg", description: "Similar 5 Description" },
-    { imageUrl: "/similar-6.jpg", description: "Similar 6 Description" },
+    { imageUrl: "/top-pick-1.jpg", description: "Top Pick 1 Description", title: "Top Pick 1" },
+    { imageUrl: "/top-pick-2.jpg", description: "Top Pick 2 Description", title: "Top Pick 2" },
+    { imageUrl: "/top-pick-3.jpg", description: "Top Pick 3 Description", title: "Top Pick 3" },
+    { imageUrl: "/top-pick-4.jpg", description: "Top Pick 4 Description", title: "Top Pick 4" },
+    { imageUrl: "/top-pick-5.jpg", description: "Top Pick 5 Description", title: "Top Pick 5" },
+    { imageUrl: "/top-pick-6.jpg", description: "Top Pick 6 Description", title: "Top Pick 6" },
+    { imageUrl: "/best-rating-1.jpg", description: "Best Rating 1 Description", title: "Best Rating 1" },
+    { imageUrl: "/best-rating-2.jpg", description: "Best Rating 2 Description", title: "Best Rating 2" },
+    { imageUrl: "/best-rating-3.jpg", description: "Best Rating 3 Description", title: "Best Rating 3" },
+    { imageUrl: "/best-rating-4.jpg", description: "Best Rating 4 Description", title: "Best Rating 4" },
+    { imageUrl: "/best-rating-5.jpg", description: "Best Rating 5 Description", title: "Best Rating 5" },
+    { imageUrl: "/best-rating-6.jpg", description: "Best Rating 6 Description", title: "Best Rating 6" },
+    { imageUrl: "/may-like-1.jpg", description: "May Like 1 Description", title: "May Like 1" },
+    { imageUrl: "/may-like-2.jpg", description: "May Like 2 Description", title: "May Like 2" },
+    { imageUrl: "/may-like-3.jpg", description: "May Like 3 Description", title: "May Like 3" },
+    { imageUrl: "/may-like-4.jpg", description: "May Like 4 Description", title: "May Like 4" },
+    { imageUrl: "/may-like-5.jpg", description: "May Like 5 Description", title: "May Like 5" },
+    { imageUrl: "/may-like-6.jpg", description: "May Like 6 Description", title: "May Like 6" },
+    { imageUrl: "/similar-1.jpg", description: "Similar 1 Description", title: "Similar 1" },
+    { imageUrl: "/similar-2.jpg", description: "Similar 2 Description", title: "Similar 2" },
+    { imageUrl: "/similar-3.jpg", description: "Similar 3 Description", title: "Similar 3" },
+    { imageUrl: "/similar-4.jpg", description: "Similar 4 Description", title: "Similar 4" },
+    { imageUrl: "/similar-5.jpg", description: "Similar 5 Description", title: "Similar 5" },
+    { imageUrl: "/similar-6.jpg", description: "Similar 6 Description", title: "Similar 6" },
   ]);
   const history = useNavigate();
 
@@ -46,13 +48,15 @@ const Main = () => {
     // Send search query to backend API
     // ...
     // Navigate to search results page
-    Navigate("/searchresultspage");
+    history(`/searchresults/${searchQuery}`);
   };
 
-  const handleThumbsDownClick = (index) => {
+  const handleThumbsDownClick = (index, title) => {
     setItems((prevItems) => {
       const newItems = [...prevItems];
       newItems.splice(index, 1);
+      // Send item title to backend API
+      // ...
       return newItems;
     });
   };
@@ -64,7 +68,7 @@ const Main = () => {
           <input
             type="text"
             className="search-input"
-            placeholder="Search Items or Keywords"
+            placeholder={searchQuery || "Search Items or Keywords"}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -84,7 +88,8 @@ const Main = () => {
             key={index}
             imageUrl={item.imageUrl}
             description={item.description}
-            onThumbsDownClick={() => handleThumbsDownClick(index)}
+            onThumbsDownClick={() => handleThumbsDownClick(index, item.title)}
+            title={item.title}
           />
         ))}
       </div>
@@ -95,7 +100,8 @@ const Main = () => {
             key={index}
             imageUrl={item.imageUrl}
             description={item.description}
-            onThumbsDownClick={() => handleThumbsDownClick(index + 6)}
+            onThumbsDownClick={() => handleThumbsDownClick(index + 6, item.title)}
+            title={item.title}
           />
         ))}
       </div>
@@ -106,7 +112,8 @@ const Main = () => {
             key={index}
             imageUrl={item.imageUrl}
             description={item.description}
-            onThumbsDownClick={() => handleThumbsDownClick(index + 12)}
+            onThumbsDownClick={() => handleThumbsDownClick(index + 12, item.title)}
+            title={item.title}
           />
         ))}
       </div>
@@ -117,7 +124,8 @@ const Main = () => {
             key={index}
             imageUrl={item.imageUrl}
             description={item.description}
-            onThumbsDownClick={() => handleThumbsDownClick(index + 18)}
+            onThumbsDownClick={() => handleThumbsDownClick(index + 18, item.title)}
+            title={item.title}
           />
         ))}
       </div>

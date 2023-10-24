@@ -6,15 +6,21 @@ import HomeContainer from "../components/HomeContainer";
 import "./InterestSelection.css";
 
 const InterestSelection = () => {
-  const [labels, setLabels] = useState([]);
+  const [genres, setGenres] = useState([]);
+  const [brands, setBrands] = useState([]);
   const [selectedLabels, setSelectedLabels] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch labels from backend using an API call
-    fetch("/api/labels")
+    // Fetch genres from backend using an API call
+    fetch("/api/genres")
       .then((response) => response.json())
-      .then((data) => setLabels(data));
+      .then((data) => setGenres(data));
+
+    // Fetch brands from backend using an API call
+    fetch("/api/brands")
+      .then((response) => response.json())
+      .then((data) => setBrands(data));
   }, []);
 
   const handleLabelClick = (label) => {
@@ -49,17 +55,34 @@ const InterestSelection = () => {
       <div className="selection">
         <a className="welcome">Welcome</a>
         <h1 className="eraecho1">EraEcho</h1>
-        {labels.map((label) => (
-          <div
-            key={label.id}
-            className={`label-box ${
-              selectedLabels.includes(label) ? "selected" : ""
-            }`}
-            onClick={() => handleLabelClick(label)}
-          >
-            {label.name}
-          </div>
-        ))}
+        <div className="category">
+          <h2>Genre</h2>
+          {genres.map((genre) => (
+            <div
+              key={genre.id}
+              className={`label-box ${
+                selectedLabels.includes(genre) ? "selected" : ""
+              }`}
+              onClick={() => handleLabelClick(genre)}
+            >
+              {genre.name}
+            </div>
+          ))}
+        </div>
+        <div className="category">
+          <h2>Brand</h2>
+          {brands.map((brand) => (
+            <div
+              key={brand.id}
+              className={`label-box ${
+                selectedLabels.includes(brand) ? "selected" : ""
+              }`}
+              onClick={() => handleLabelClick(brand)}
+            >
+              {brand.name}
+            </div>
+          ))}
+        </div>
         <Button
           className="continue-button"
           variant="warning"

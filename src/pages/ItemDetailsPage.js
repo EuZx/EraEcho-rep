@@ -1,19 +1,38 @@
-import ContainerFrame from "../components/ContainerFrame";
+import { useState, useEffect } from "react";
+import ContainerFrame from "../components/ContainerNav";
 import "./ItemDetailsPage.css";
 
-const ItemDetailsPage = () => {
+const ItemDetailsPage = ({ itemId }) => {
+  const [item, setItem] = useState(null);
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    // Fetch item details and reviews from backend using itemId
+    fetch(`/api/items/${itemId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setItem(data.item);
+        setReviews(data.reviews);
+      })
+      .catch((error) => console.error(error));
+  }, [itemId]);
+
   return (
     <div className="itemdetailspage">
       <ContainerFrame />
       <div className="frame10">
         <div className="frame11">
-          <img className="frame-item" alt="" src="/ItemCover@2x.png" />
+          <img
+            className="frame-item"
+            alt=""
+            src={item?.image || "/subimage1.jpeg"}
+          />
           <div className="frame12">
             <div className="name-brand-category-container">
-              <p className="name">Name</p>
-              <p className="name">Brand:</p>
-              <p className="name">Category:</p>
-              <p className="name">Overall Rating:</p>
+              <p className="name">Name: {item?.name}</p>
+              <p className="name">Brand: {item?.brand}</p>
+              <p className="name">Category: {item?.category}</p>
+              <p className="name">Overall Rating: {item?.rating}</p>
             </div>
           </div>
         </div>
@@ -23,18 +42,13 @@ const ItemDetailsPage = () => {
           </div>
           <div className="frame14">
             <section className="reviewer-1-rating-container">
-              <p className="reviewer-1">Reviewer 1:</p>
-              <p className="name">Rating: ......</p>
-              <p className="name">Review: ......</p>
-              <p className="reviewer-1">Reviewer 2:</p>
-              <p className="name">Rating: ......</p>
-              <p className="name">Review: ......</p>
-              <p className="reviewer-1">Reviewer 3:</p>
-              <p className="name">Rating: ......</p>
-              <p className="name">Review: ......</p>
-              <p className="reviewer-1">{`Reviewer 4: `}</p>
-              <p className="name">Rating: ......</p>
-              <p className="name">Review: ......</p>
+              {reviews.map((review) => (
+                <div key={review.id}>
+                  <p className="reviewer-1">{`Reviewer ${review.id}:`}</p>
+                  <p className="name">Rating: {review.rating}</p>
+                  <p className="name">Review: {review.review}</p>
+                </div>
+              ))}
             </section>
           </div>
         </div>
